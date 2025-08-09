@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: telegram-bot-webhook
+    env: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: TOKEN
+        sync: false
+      - key: WEBHOOK_SECRET
+        sync: false
+    healthCheckPath: /health

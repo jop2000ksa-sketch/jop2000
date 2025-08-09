@@ -1,0 +1,4 @@
+python-telegram-bot>=20.7,<22
+fastapi>=0.111
+uvicorn[standard]>=0.30
+APScheduler>=3.10.4
